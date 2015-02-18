@@ -1,0 +1,36 @@
+
+R version 3.1.2 (2014-10-31) -- "Pumpkin Helmet"
+Copyright (C) 2014 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> is.installed <- function(mypkg){
++   is.element(mypkg, installed.packages()[,1])
++ } 
+> library(rkafka1.0)
+>   
+> producer1=rkafka.startProducer("127.0.0.1:9092")
+log4j:WARN No appenders could be found for logger (kafka.utils.VerifiableProperties).
+log4j:WARN Please initialize the log4j system properly.
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+> condition=rJava::.jinstanceof(producer1,"com/musigma/producer/MuProducer")
+> RUnit::checkTrue(condition,"check1")
+[1] TRUE
+> 
+> 
+> proc.time()
+   user  system elapsed 
+  1.121   0.068   1.202 

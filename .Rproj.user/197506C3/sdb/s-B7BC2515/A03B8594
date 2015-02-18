@@ -1,0 +1,16 @@
+{
+    "contents" : "\\name{rkafka.send}\n\\alias{rkafka.send}\n\\alias{producer}\n\\alias{topicName}\n\\alias{ip}\n\\alias{message}\n%- Also NEED an '\\alias' for EACH other topic documented here.\n\\title{\nKAFKA producer sending message\n}\n\\description{\nThis function sends message to a particular name through a producer\n}\n\\usage{\nrkafka.send(producer, topicName, ip, message)\n}\n%- maybe also 'usage' for other objects documented here.\n\\arguments{\n  \\item{producer}{\n#     * @param producer:producer(Java object)\n#   *            !!Mandatory: Producer through which messages are to be sent\n}\n  \\item{topicName}{\n* @param topicName:String\n#   *            !!Mandatory: Topic to which messages are to be sent. If topicName doesn't exist, new topic is created\n#   * \n}\n  \\item{ip}{\n#     * @param ip:String\n#   *            !!Mandatory: ip on which producer is running\n}\n  \\item{message}{\n#     * @param message:String\n#   *            !!Mandatory: message to be sent\n}\n}\n\\details{\n%%  ~~ If necessary, more details than the description above ~~\n}\n\\value{\nDoesn't return a value\n}\n\\references{\n%% ~put references to the literature/web site here ~\n}\n\\author{\nShruti Gupta\n}\n\\note{\n%%  ~~further notes~~\n}\n\n%% ~Make other sections like Warning with \\section{Warning }{....} ~\n\n\\seealso{\n%% ~~objects to See Also as \\code{\\link{help}}, ~~~\n}\n\\examples{\nproducer1=rkafka.startProducer(\"127.0.0.1:9092\")\nrkafka.send(producer1,\"test\",\"127.0.0.1:9092\",\"Testing\")\n}\n% Add one or more standard keywords, see file 'KEYWORDS' in the\n% R documentation directory.\n\\keyword{ ~KAFKA}\n\\keyword{ ~Producer }% __ONLY ONE__ keyword per line\n\\keyword{ ~Message sending }",
+    "created" : 1424098960712.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "220888479",
+    "id" : "A03B8594",
+    "lastKnownWriteTime" : 1424101657,
+    "path" : "/home/shrutigupta34/rkafkafinal/rkafka1.0/src/man/rkafka.send.Rd",
+    "project_path" : "src/man/rkafka.send.Rd",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_doc"
+}

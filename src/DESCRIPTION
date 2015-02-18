@@ -1,0 +1,11 @@
+Package: rkafka
+Type: Package
+Title: R Package for KAFKA
+Version: 1.0
+Date: 2015-02-11
+Author: Shruti Gupta
+Maintainer: Shruti Gupta<shruti.gupta@mu-sigma.com>
+Description: This package enables the following:1.Creating KAFKA producer 2.Writing messages to a topic 3.Closing KAFKA producer 4.Creating KAFKA consumer 5.Reading messages from a topic 5.Closing KAFKA consumer
+Depends: rJava,RUnit
+SystemRequirements: Oracle Java 7,Apache KAFKA 2.8.0-0.8.1.1
+License:  GPL-3

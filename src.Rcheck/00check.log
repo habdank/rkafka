@@ -1,0 +1,111 @@
+* using log directory ‘/home/shrutigupta34/rkafkafinal/rkafka/src.Rcheck’
+* using R version 3.1.2 (2014-10-31)
+* using platform: x86_64-pc-linux-gnu (64-bit)
+* using session charset: UTF-8
+* checking for file ‘src/DESCRIPTION’ ... OK
+* checking extension type ... Package
+* this is package ‘rkafka’ version ‘1.0’
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... OK
+* checking for sufficient/correct file permissions ... OK
+* checking whether package ‘rkafka’ can be installed ... OK
+* checking installed package size ... NOTE
+  installed size is 12.1Mb
+  sub-directories of 1Mb or more:
+    java  12.0Mb
+* checking package directory ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking loading without being on the library search path ... OK
+* checking dependencies in R code ... NOTE
+'library' or 'require' call to ‘rJava’ which was already attached by Depends.
+  Please remove these calls from your code.
+See the information on DESCRIPTION files in the chapter ‘Creating R
+packages’ of the ‘Writing R Extensions’ manual.
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... NOTE
+File ‘src/R/rkafka.R’:
+  .onLoad calls:
+    library("rJava")
+
+Package startup functions should not change the search path.
+See section ‘Good practice’ in '?.onAttach'.
+
+Error in loadNamespace(name) : there is no package called ‘codetools’
+Calls: <Anonymous> ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted
+* checking Rd files ... NOTE
+prepare_Rd: rkafka.closeConsumer.Rd:19-21: Dropping empty section \details
+prepare_Rd: rkafka.closeConsumer.Rd:31-33: Dropping empty section \note
+prepare_Rd: rkafka.closeConsumer.Rd:25-27: Dropping empty section \references
+prepare_Rd: rkafka.closeConsumer.Rd:37-39: Dropping empty section \seealso
+prepare_Rd: rkafka.closeProducer.Rd:20-22: Dropping empty section \details
+prepare_Rd: rkafka.closeProducer.Rd:32-34: Dropping empty section \note
+prepare_Rd: rkafka.closeProducer.Rd:26-28: Dropping empty section \references
+prepare_Rd: rkafka.closeProducer.Rd:38-40: Dropping empty section \seealso
+prepare_Rd: rkafka.read.Rd:23-25: Dropping empty section \details
+prepare_Rd: rkafka.read.Rd:29-31: Dropping empty section \references
+prepare_Rd: rkafka.read.Rd:41-43: Dropping empty section \seealso
+prepare_Rd: rkafka.send.Rd:37-39: Dropping empty section \details
+prepare_Rd: rkafka.send.Rd:49-51: Dropping empty section \note
+prepare_Rd: rkafka.send.Rd:43-45: Dropping empty section \references
+prepare_Rd: rkafka.send.Rd:55-57: Dropping empty section \seealso
+prepare_Rd: rkafka.startConsumer.Rd:63-65: Dropping empty section \details
+prepare_Rd: rkafka.startConsumer.Rd:75-77: Dropping empty section \note
+prepare_Rd: rkafka.startConsumer.Rd:69-71: Dropping empty section \references
+prepare_Rd: rkafka.startConsumer.Rd:81-83: Dropping empty section \seealso
+prepare_Rd: rkafka.startProducer.Rd:88-90: Dropping empty section \details
+prepare_Rd: rkafka.startProducer.Rd:101-103: Dropping empty section \note
+prepare_Rd: rkafka.startProducer.Rd:95-97: Dropping empty section \references
+prepare_Rd: rkafka.startProducer.Rd:107-109: Dropping empty section \seealso
+* checking Rd metadata ... OK
+* checking Rd cross-references ... WARNING
+Error in find.package(package, lib.loc) : 
+  there is no package called ‘survival’
+Calls: <Anonymous> -> lapply -> FUN -> find.package
+Execution halted
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... WARNING
+Codoc mismatches from documentation object 'rkafka.closeProducer':
+rkafka.closeProducer
+  Code: function(producer)
+  Docs: function(producerObj)
+  Argument names in code not in docs:
+    producer
+  Argument names in docs not in code:
+    producerObj
+  Mismatches in argument names:
+    Position: 1 Code: producer Docs: producerObj
+
+* checking Rd \usage sections ... OK
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking examples ... OK
+* checking for unstated dependencies in tests ... WARNING
+'library' or 'require' call not declared from: ‘rkafka1.0’
+* checking tests ... OK
+  Running ‘unitTests.R’
+* checking PDF version of manual ... WARNING
+LaTeX errors when creating PDF version.
+This typically indicates Rd problems.
+* checking PDF version of manual without hyperrefs or index ... OK
+* DONE
+WARNING: There were 4 warnings.
+NOTE: There were 4 notes.

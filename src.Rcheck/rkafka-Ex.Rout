@@ -1,0 +1,193 @@
+
+R version 3.1.2 (2014-10-31) -- "Pumpkin Helmet"
+Copyright (C) 2014 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "rkafka"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> library('rkafka')
+Loading required package: rJava
+Loading required package: RUnit
+> 
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("rkafka-package")
+> ### * rkafka-package
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: R package for KAFKA
+> ### Title: RKAFKA
+> ### Aliases: 'RKAFKA package'
+> ### Keywords: package
+> 
+> ### ** Examples
+> 
+> producer1=rkafka.startProducer("127.0.0.1:9092")
+log4j:WARN No appenders could be found for logger (kafka.utils.VerifiableProperties).
+log4j:WARN Please initialize the log4j system properly.
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+> rkafka.send(producer1,"ind1","127.0.0.1:9092","this2")
+[1] "INFO:Remember to close the producer after done sending messages"
+> rkafka.send(producer1,"ind1","127.0.0.1:9092","is21")
+[1] "INFO:Remember to close the producer after done sending messages"
+> rkafka.closeProducer(producer1)
+> consumer1=rkafka.startConsumer("127.0.0.1:2181")
+> msgs=rkafka.read(consumer1,"ind1")
+No new messages pushed within timeout threshold
+[1] "INFO: Remember to close the consumer after reading messages. It won't work correctly next time otherwise"
+> print(msgs)
+[1] "this2" "is21" 
+> rkafka.closeConsumer(consumer1)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("rkafka.closeConsumer")
+> ### * rkafka.closeConsumer
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: rkafka.closeConsumer
+> ### Title: Closing KAKFA consumer
+> ### Aliases: rkafka.closeConsumer
+> ### Keywords: ~kafka ~consumer ~close
+> 
+> ### ** Examples
+> 
+> consumer1=rkafka.startConsumer("127.0.0.1:2181")
+> rkafka.closeConsumer(consumer1)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("rkafka.closeProducer")
+> ### * rkafka.closeProducer
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: rkafka.closeProducer
+> ### Title: KAFKA producer shutdown
+> ### Aliases: rkafka.closeProducer producerObj
+> ### Keywords: ~kafka ~producer ~close
+> 
+> ### ** Examples
+> 
+> producer1=rkafka.startProducer("127.0.0.1:9092")
+> rkafka.closeProducer(producer1)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("rkafka.read")
+> ### * rkafka.read
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: rkafka.read
+> ### Title: KAFKA Consumer Reading
+> ### Aliases: rkafka.read
+> ### Keywords: ~kafka ~consumer ~read
+> 
+> ### ** Examples
+> 
+> consumer1=rkafka.startConsumer("127.0.0.1:2181")
+> print(rkafka.read(consumer1,"test"))
+No new messages pushed within timeout threshold
+[1] "INFO: Remember to close the consumer after reading messages. It won't work correctly next time otherwise"
+[1] "Testing"
+> 
+> 
+> 
+> cleanEx()
+> nameEx("rkafka.send")
+> ### * rkafka.send
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: rkafka.send
+> ### Title: KAFKA producer sending message
+> ### Aliases: rkafka.send producer topicName ip message
+> ### Keywords: ~KAFKA ~Producer ~Message sending
+> 
+> ### ** Examples
+> 
+> producer1=rkafka.startProducer("127.0.0.1:9092")
+> rkafka.send(producer1,"test","127.0.0.1:9092","Testing")
+[1] "INFO:Remember to close the producer after done sending messages"
+> 
+> 
+> 
+> cleanEx()
+> nameEx("rkafka.startConsumer")
+> ### * rkafka.startConsumer
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: rkafka.startConsumer
+> ### Title: Creating high level KAFKA consumer
+> ### Aliases: rkafka.startConsumer zookeeperConnect groupId
+> ###   zookeeperConnectionTimeoutMs consumerTimeoutMs autoCommitEnable
+> ###   autoCommitInterval autoOffsetReset
+> ### Keywords: ~kafka ~consumer ~create
+> 
+> ### ** Examples
+> 
+> consumer1=rkafka.startConsumer("127.0.0.1:2181")
+> consumer2=rkafka.startConsumer("127.0.0.1:2181","test-consumer-group","50000","1000")
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("rkafka.startProducer")
+> ### * rkafka.startProducer
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: start.Producer
+> ### Title: Creating producer
+> ### Aliases: rkafka.startProducer metadataBrokerList producerType
+> ###   compressionCodec serializerClass partitionerClass compressedTopics
+> ###   queueBufferingMaxTime queueBufferingMaxMessages
+> ###   queueEnqueueTimeoutTime batchNumMessages
+> ### Keywords: ~KAFKA ~producer
+> 
+> ### ** Examples
+> 
+> producer1=rkafka.startProducer("127.0.0.1:9092")
+> producer2=rkafka.startProducer("127.0.0.1:9092","sync","none","kafka.serializer.StringEncoder")
+>   
+> 
+> 
+> ### * <FOOTER>
+> ###
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  2.521 0.123 12.867 0 0 
+> grDevices::dev.off()
+null device 
+          1 
+> ###
+> ### Local variables: ***
+> ### mode: outline-minor ***
+> ### outline-regexp: "\\(> \\)?### [*]+" ***
+> ### End: ***
+> quit('no')

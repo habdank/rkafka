@@ -1,0 +1,450 @@
+\nonstopmode{}
+\documentclass[letterpaper]{book}
+\usepackage[times,inconsolata,hyper]{Rd}
+\usepackage{makeidx}
+\usepackage[utf8,latin1]{inputenc}
+% \usepackage{graphicx} % @USE GRAPHICX@
+\makeindex{}
+\begin{document}
+\chapter*{}
+\begin{center}
+{\textbf{\huge Package `rkafka'}}
+\par\bigskip{\large \today}
+\end{center}
+\begin{description}
+\raggedright{}
+\item[Type]\AsIs{Package}
+\item[Title]\AsIs{R Package for KAFKA}
+\item[Version]\AsIs{1.0}
+\item[Date]\AsIs{2015-02-11}
+\item[Author]\AsIs{Shruti Gupta}
+\item[Maintainer]\AsIs{Shruti Gupta}\email{shruti.gupta@mu-sigma.com}\AsIs{}
+\item[Description]\AsIs{This package enables the following:1.Creating KAFKA producer 2.Writing messages to a topic 3.Closing KAFKA producer 4.Creating KAFKA consumer 5.Reading messages from a topic 5.Closing KAFKA consumer}
+\item[Depends]\AsIs{rJava,RUnit}
+\item[SystemRequirements]\AsIs{Oracle Java 7,Apache KAFKA 2.8.0-0.8.1.1}
+\item[License]\AsIs{GPL-3}
+\end{description}
+\Rdcontents{\R{} topics documented:}
+\inputencoding{utf8}
+\HeaderA{R package for KAFKA}{RKAFKA}{R package for KAFKA}
+\aliasA{RKAFKA package}{R package for KAFKA}{RKAFKA package}
+\keyword{package}{R package for KAFKA}
+%
+\begin{Description}\relax
+It provides functionalities of creating a KAFKA producer and consumer, and sending and receiving messages.
+\end{Description}
+%
+\begin{Details}\relax
+
+\Tabular{ll}{
+Package: & rkafka\\{}
+Type: & Package\\{}
+Version: & 1.0\\{}
+Date: & 2015-02-11\\{}
+License: & GPL-3\\{}
+}
+\textasciitilde{}\textasciitilde{} An overview of how to use the package, including the most important functions \textasciitilde{}\textasciitilde{}
+\end{Details}
+%
+\begin{Author}\relax
+Shruti Gupta
+
+Maintainer: Who to complain to shruti.gupta@mu-sigma.com
+
+\end{Author}
+%
+\begin{References}\relax
+\textasciitilde{}\textasciitilde{} Literature or other references for background information \textasciitilde{}\textasciitilde{}
+\end{References}
+%
+\begin{SeeAlso}\relax
+\textasciitilde{}\textasciitilde{} Optional links to other man pages, e.g. \textasciitilde{}\textasciitilde{}
+\textasciitilde{}\textasciitilde{} \code{\LinkA{<pkg>}{<pkg>}} \textasciitilde{}\textasciitilde{}
+\end{SeeAlso}
+%
+\begin{Examples}
+\begin{ExampleCode}
+producer1=rkafka.startProducer("127.0.0.1:9092")
+rkafka.send(producer1,"ind1","127.0.0.1:9092","this2")
+rkafka.send(producer1,"ind1","127.0.0.1:9092","is21")
+rkafka.closeProducer(producer1)
+consumer1=rkafka.startConsumer("127.0.0.1:2181")
+msgs=rkafka.read(consumer1,"ind1")
+print(msgs)
+rkafka.closeConsumer(consumer1)
+\end{ExampleCode}
+\end{Examples}
+\inputencoding{utf8}
+\HeaderA{rkafka.closeConsumer}{Closing KAKFA consumer}{rkafka.closeConsumer}
+\keyword{\textbackslash{}textasciitilde{}kafka}{rkafka.closeConsumer}
+\keyword{\textbackslash{}textasciitilde{}consumer}{rkafka.closeConsumer}
+\keyword{\textbackslash{}textasciitilde{}close}{rkafka.closeConsumer}
+%
+\begin{Description}\relax
+This functions shuts down the KAFKA consumer
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+rkafka.closeConsumer(HighConsumerObj)
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{HighConsumerObj}] 
+\#  	  @param HighConsumerObj:Consumer through which messages are to be read(Java Object)	
+
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Value}
+Function doesn't return anything
+\end{Value}
+%
+\begin{Author}\relax
+Shruti Gupta
+\end{Author}
+%
+\begin{Examples}
+\begin{ExampleCode}
+consumer1=rkafka.startConsumer("127.0.0.1:2181")
+rkafka.closeConsumer(consumer1)
+\end{ExampleCode}
+\end{Examples}
+\inputencoding{utf8}
+\HeaderA{rkafka.closeProducer}{KAFKA producer shutdown}{rkafka.closeProducer}
+\aliasA{producerObj}{rkafka.closeProducer}{producerObj}
+\keyword{\textbackslash{}textasciitilde{}kafka}{rkafka.closeProducer}
+\keyword{\textbackslash{}textasciitilde{}producer}{rkafka.closeProducer}
+\keyword{\textbackslash{}textasciitilde{}close}{rkafka.closeProducer}
+%
+\begin{Description}\relax
+This function closes the KAFKA producer
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+rkafka.closeProducer(producerObj)
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{producerObj}] 
+\#     * @param producerObj:producerObj(Java object)
+\#   *            !!Mandatory: Producer which is to be terminated
+
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Value}
+Doesn't return anything
+\end{Value}
+%
+\begin{Author}\relax
+Shruti Gupta
+\end{Author}
+%
+\begin{Examples}
+\begin{ExampleCode}
+producer1=rkafka.startProducer("127.0.0.1:9092")
+rkafka.closeProducer(producer1)
+\end{ExampleCode}
+\end{Examples}
+\inputencoding{utf8}
+\HeaderA{rkafka.read}{KAFKA Consumer Reading}{rkafka.read}
+\keyword{\textbackslash{}textasciitilde{}kafka}{rkafka.read}
+\keyword{\textbackslash{}textasciitilde{}consumer}{rkafka.read}
+\keyword{\textbackslash{}textasciitilde{}read}{rkafka.read}
+%
+\begin{Description}\relax
+This function reads messages received by a KAFKA consumer
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+rkafka.read(HighConsumerObj, topicName)
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{HighConsumerObj}] 
+\#  	  @param HighConsumerObj:Consumer through which messages are to be read(Java Object)	
+
+\item[\code{topicName}] 
+\#  	  @param topicName
+\#*            :The topic from which message is to be read
+
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Value}
+Array Of Strings
+\end{Value}
+%
+\begin{Note}\relax
+Warning: Ensure to close the consumer after reading messages. Won't work correctly next time otherwise
+\end{Note}
+%
+\begin{Author}\relax
+Shruti Gupta
+\end{Author}
+%
+\begin{Examples}
+\begin{ExampleCode}
+consumer1=rkafka.startConsumer("127.0.0.1:2181")
+print(rkafka.read(consumer1,"test"))
+\end{ExampleCode}
+\end{Examples}
+\inputencoding{utf8}
+\HeaderA{rkafka.send}{KAFKA producer sending message}{rkafka.send}
+\aliasA{ip}{rkafka.send}{ip}
+\aliasA{message}{rkafka.send}{message}
+\aliasA{producer}{rkafka.send}{producer}
+\aliasA{topicName}{rkafka.send}{topicName}
+\keyword{\textbackslash{}textasciitilde{}KAFKA}{rkafka.send}
+\keyword{\textbackslash{}textasciitilde{}Producer}{rkafka.send}
+\keyword{\textbackslash{}textasciitilde{}Message sending}{rkafka.send}
+%
+\begin{Description}\relax
+This function sends message to a particular name through a producer
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+rkafka.send(producer, topicName, ip, message)
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{producer}] 
+\#     * @param producer:producer(Java object)
+\#   *            !!Mandatory: Producer through which messages are to be sent
+
+\item[\code{topicName}] 
+* @param topicName:String
+\#   *            !!Mandatory: Topic to which messages are to be sent. If topicName doesn't exist, new topic is created
+\#   * 
+
+\item[\code{ip}] 
+\#     * @param ip:String
+\#   *            !!Mandatory: ip on which producer is running
+
+\item[\code{message}] 
+\#     * @param message:String
+\#   *            !!Mandatory: message to be sent
+
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Value}
+Doesn't return a value
+\end{Value}
+%
+\begin{Author}\relax
+Shruti Gupta
+\end{Author}
+%
+\begin{Examples}
+\begin{ExampleCode}
+producer1=rkafka.startProducer("127.0.0.1:9092")
+rkafka.send(producer1,"test","127.0.0.1:9092","Testing")
+\end{ExampleCode}
+\end{Examples}
+\inputencoding{utf8}
+\HeaderA{rkafka.startConsumer}{Creating high level KAFKA consumer}{rkafka.startConsumer}
+\aliasA{autoCommitEnable}{rkafka.startConsumer}{autoCommitEnable}
+\aliasA{autoCommitInterval}{rkafka.startConsumer}{autoCommitInterval}
+\aliasA{autoOffsetReset}{rkafka.startConsumer}{autoOffsetReset}
+\aliasA{consumerTimeoutMs}{rkafka.startConsumer}{consumerTimeoutMs}
+\aliasA{groupId}{rkafka.startConsumer}{groupId}
+\aliasA{zookeeperConnect}{rkafka.startConsumer}{zookeeperConnect}
+\aliasA{zookeeperConnectionTimeoutMs}{rkafka.startConsumer}{zookeeperConnectionTimeoutMs}
+\keyword{\textbackslash{}textasciitilde{}kafka}{rkafka.startConsumer}
+\keyword{\textbackslash{}textasciitilde{}consumer}{rkafka.startConsumer}
+\keyword{\textbackslash{}textasciitilde{}create}{rkafka.startConsumer}
+%
+\begin{Description}\relax
+This function creates a high level KAFKA consumer
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+rkafka.startConsumer(zookeeperConnect,groupId="test-consumer-group",zookeeperConnectionTimeoutMs="100000",consumerTimeoutMs="5000",autoCommitEnable="true",autoCommitInterval="1000",autoOffsetReset="largest")
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{zookeeperConnect}] 
+\#@param zookeeperConnect
+\#*            !!Mandatory:Zookeeper connection string comma separated
+\#*            host:port pairs, each corresponding to a zk server. e.g.
+\#*            "127.0.0.1:3000,127.0.0.1:3001,127.0.0.1:3002"
+\#*  		  default:"127.0.0.1:2181"
+
+\item[\code{groupId}] 
+\#* @param groupId
+\#*            !!Mandatory:consumer group id default:test-consumer-group
+
+\item[\code{zookeeperConnectionTimeoutMs}] 
+\#* @param zookeeperConnectionTimeoutMs
+\#*            !!Mandatory:timeout in ms for connecting to zookeeper
+\#*            default:100000
+
+\item[\code{consumerTimeoutMs}] 
+\#* @param consumerTimeoutMs
+\#*            !!Mandatory:Throw a timeout exception to the consumer if no
+\#*            message is available for consumption after the specified
+\#*            interval default:1000
+
+\item[\code{autoCommitEnable}] 
+\#*            --Optional:default:true If true, periodically commit to
+\#*            ZooKeeper the offset of messages already fetched by the
+\#*            consumer. This committed offset will be used when the process
+\#*            fails as the position from which the new consumer will begin.
+
+\item[\code{autoCommitInterval}] 
+\#* @param autoCommitIntervalMs
+\#*            --Optional:default:60*1000 The frequency in ms that the
+\#*            consumer offsets are committed to zookeeper.
+
+\item[\code{autoOffsetReset}] 
+\#*            --Optional:default:largest * smallest : automatically reset
+\#*            the offset to the smallest offset largest : automatically
+\#*            reset the offset to the largest offset anything else: throw
+\#*            exception to the consumer
+
+
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Value}
+Returns a consumer
+\end{Value}
+%
+\begin{Author}\relax
+Shruti Gupta
+\end{Author}
+%
+\begin{Examples}
+\begin{ExampleCode}
+consumer1=rkafka.startConsumer("127.0.0.1:2181")
+consumer2=rkafka.startConsumer("127.0.0.1:2181","test-consumer-group","50000","1000")
+
+\end{ExampleCode}
+\end{Examples}
+\inputencoding{utf8}
+\HeaderA{start.Producer}{Creating producer}{start.Producer}
+\aliasA{batchNumMessages}{start.Producer}{batchNumMessages}
+\aliasA{compressedTopics}{start.Producer}{compressedTopics}
+\aliasA{compressionCodec}{start.Producer}{compressionCodec}
+\aliasA{metadataBrokerList}{start.Producer}{metadataBrokerList}
+\aliasA{partitionerClass}{start.Producer}{partitionerClass}
+\aliasA{producerType}{start.Producer}{producerType}
+\aliasA{queueBufferingMaxMessages}{start.Producer}{queueBufferingMaxMessages}
+\aliasA{queueBufferingMaxTime}{start.Producer}{queueBufferingMaxTime}
+\aliasA{queueEnqueueTimeoutTime}{start.Producer}{queueEnqueueTimeoutTime}
+\aliasA{rkafka.startProducer}{start.Producer}{rkafka.startProducer}
+\aliasA{serializerClass}{start.Producer}{serializerClass}
+\keyword{\textbackslash{}textasciitilde{}KAFKA}{start.Producer}
+\keyword{\textbackslash{}textasciitilde{}producer}{start.Producer}
+%
+\begin{Description}\relax
+This function is used to create a KAFKA producer
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+rkafka.startProducer(metadataBrokerList,producerType="sync",compressionCodec="none",
+  	serializerClass="kafka.serializer.StringEncoder",partitionerClass="NULL",compressedTopics="NULL",
+		queueBufferingMaxTime="NULL",
+		queueBufferingMaxMessages="NULL",
+		queueEnqueueTimeoutTime="NULL",
+		batchNumMessages="NULL")
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{metadataBrokerList}] 
+\#     * @param metadataBrokerList:String
+\#   *            !!Mandatory list of brokers used for bootstrapping knowledge
+\#   *            about the rest of the cluster format: host1:port1,host2:port2
+\#   *            ... default:localhost:9092
+
+\item[\code{producerType}] 
+\#     * @param producerType:String
+\#   *            !!Mandatory specifies whether the messages are sent
+\#   *            asynchronously (async) or synchronously (sync) default:sync
+
+\item[\code{compressionCodec}] 
+\#     * @param compressionCodec:String
+\#   *            !!Mandatory specify the compression codec for all data
+\#   *            generated: none , gzip, snappy. default:none
+
+\item[\code{serializerClass}] 
+\#     * @param serializerClass:String
+\#   *            !!Mandatory message encoder
+\#   *            default:kafka.serializer.StringEncoder
+
+\item[\code{partitionerClass}] 
+\#     * @param partitionerClass:String
+\#   *            --Optional name of the partitioner class for partitioning
+\#   *            events; default partition spreads data randomly
+\#               default:NULL
+
+\item[\code{compressedTopics}] 
+\#     * @param compressedTopics:String
+\#   *            --Optional allow topic level compression
+\#   * \#               default:NULL
+
+\item[\code{queueBufferingMaxTime}] 
+\#     * @param queueBufferingMaxTime:String
+\#   *            --Optional(for Async Producer only) maximum time, in
+\#   *            milliseconds, for buffering data on the producer queue
+\#   * \#               default:NULL
+
+\item[\code{queueBufferingMaxMessages}] 
+\#     * @param queueBufferingMaxMessages:String
+\#   *            --Optional(for Async Producer only) the maximum size of the
+\#   *            blocking queue for buffering on the producer
+\#   *\#               default:NULL
+
+\item[\code{queueEnqueueTimeoutTime}] 
+\#   *            --Optional(for Async Producer only) 0: events will be enqueued
+\#   *            immediately or dropped if the queue is full -ve: enqueue will
+\#   *            block indefinitely if the queue is full +ve: enqueue will
+\#   *            block up to this many milliseconds if the queue is full
+\#   *\#               default:NULL
+
+\item[\code{batchNumMessages}] 
+\#     * @param batchNumMessages:String
+\#   *            --Optional(for Async Producer only) the number of messages
+\#   *            batched at the producer
+\#   * \#               default:NULL
+
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Value}
+\#     * @return returns a Properties Object containing properties for the
+\#   *         Producer, to be passed to MuProducer class
+\end{Value}
+%
+\begin{Author}\relax
+Shruti Gupta
+\end{Author}
+%
+\begin{Examples}
+\begin{ExampleCode}
+producer1=rkafka.startProducer("127.0.0.1:9092")
+producer2=rkafka.startProducer("127.0.0.1:9092","sync","none","kafka.serializer.StringEncoder")
+  
+\end{ExampleCode}
+\end{Examples}
+\printindex{}
+\end{document}

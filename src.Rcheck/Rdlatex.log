@@ -1,0 +1,199 @@
+Hmm ... looks like a package
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian)
+ restricted \write18 enabled.
+entering extended mode
+(./Rd2.tex
+LaTeX2e <2011/06/27>
+Babel <3.9h> and hyphenation patterns for 2 languages loaded.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/bk10.clo))
+(/usr/share/R/share/texmf/tex/latex/Rd.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/bm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/alltt.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def))
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.dfu))
+(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def))
+No file Rd2.aux.
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd)
+No file Rd2.toc.
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+Overfull \vbox (16.94704pt too high) has occurred while \output is active
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (18.95793pt too wide) in paragraph at lines 94--95
+[]\T1/ptm/m/n/10 # @param High-Con-sumer-Obj:Consumer through which mes-sages a
+re to be read(Java
+[2] (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (18.95793pt too wide) in paragraph at lines 172--173
+[]\T1/ptm/m/n/10 # @param High-Con-sumer-Obj:Consumer through which mes-sages a
+re to be read(Java
+[3] (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [4]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (846.78088pt too wide) in paragraph at lines 274--274
+ []\T1/pcr/m/n/10 rkafka.startConsumer(zookeeperConnect,groupId="test-consumer-
+group",zookeeperConnectionTimeoutMs="100000",consumerTimeoutMs="5000",autoCommi
+tEnable="true",autoCommitInterval="1000",autoOffsetReset="largest")[] 
+
+Overfull \hbox (9.04823pt too wide) in paragraph at lines 281--286
+[]\T1/ptm/m/n/10 #@param zookeep-er-Con-nect #* !!Manda-tory:Zookeeper con-nec-
+tion string comma
+
+Overfull \hbox (154.08838pt too wide) in paragraph at lines 281--286
+\T1/ptm/m/n/10 sep-a-rated #* host:port pairs, each cor-re-spond-ing to a zk se
+rver. e.g. #* "127.0.0.1:3000,127.0.0.1:3001,127.0.0.1:3002"
+[5]
+Overfull \hbox (4.89815pt too wide) in paragraph at lines 309--312
+[]\T1/ptm/m/n/10 #* @param au-to-Com-mit-In-ter-valMs #* --Optional:default:60*
+1000 The fre-quency
+
+Overfull \hbox (63.78036pt too wide) in paragraph at lines 334--334
+ []\T1/pcr/m/n/9 consumer2=rkafka.startConsumer("127.0.0.1:2181","test-consumer
+-group","50000","1000")[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (108.78088pt too wide) in paragraph at lines 360--360
+ []\T1/pcr/m/n/10 rkafka.startProducer(metadataBrokerList,producerType="sync",c
+ompressionCodec="none",[] 
+
+Overfull \hbox (204.78088pt too wide) in paragraph at lines 361--361
+ []   \T1/pcr/m/n/10 serializerClass="kafka.serializer.StringEncoder",partition
+erClass="NULL",compressedTopics="NULL",[] 
+
+Overfull \hbox (31.62755pt too wide) in paragraph at lines 372--376
+\T1/ptm/m/n/10 boot-strap-ping knowl-edge # * about the rest of the clus-ter fo
+r-mat: host1:port1,host2:port2
+[6]
+Overfull \hbox (8.05768pt too wide) in paragraph at lines 393--397
+\T1/ptm/m/n/10 for par-ti-tion-ing # * events; de-fault par-ti-tion spreads dat
+a ran-domly # de-fault:NULL 
+
+Overfull \hbox (117.7803pt too wide) in paragraph at lines 443--443
+ []\T1/pcr/m/n/9 producer2=rkafka.startProducer("127.0.0.1:9092","sync","none",
+"kafka.serializer.StringEncoder")[] 
+[7] [8] (./Rd2.aux) )
+(see the transcript file for additional information){/usr/share/texlive/texmf-d
+ist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/urw/
+courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr
+8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (8 pages, 77651 bytes).
+Transcript written on Rd2.log.
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian)
+ restricted \write18 enabled.
+entering extended mode
+(./Rd2.tex
+LaTeX2e <2011/06/27>
+Babel <3.9h> and hyphenation patterns for 2 languages loaded.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/bk10.clo))
+(/usr/share/R/share/texmf/tex/latex/Rd.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/bm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/alltt.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def))
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.dfu))
+(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def)) (./Rd2.aux)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd) (./Rd2.toc)
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [1{/var/lib/texmf/fonts
+/map/pdftex/updmap/pdftex.map}]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (18.95793pt too wide) in paragraph at lines 94--95
+[]\T1/ptm/m/n/10 # @param High-Con-sumer-Obj:Consumer through which mes-sages a
+re to be read(Java
+[2] (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [3]
+Overfull \hbox (18.95793pt too wide) in paragraph at lines 172--173
+[]\T1/ptm/m/n/10 # @param High-Con-sumer-Obj:Consumer through which mes-sages a
+re to be read(Java
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [4]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (846.78088pt too wide) in paragraph at lines 274--274
+ []\T1/pcr/m/n/10 rkafka.startConsumer(zookeeperConnect,groupId="test-consumer-
+group",zookeeperConnectionTimeoutMs="100000",consumerTimeoutMs="5000",autoCommi
+tEnable="true",autoCommitInterval="1000",autoOffsetReset="largest")[] 
+
+Overfull \hbox (9.04823pt too wide) in paragraph at lines 281--286
+[]\T1/ptm/m/n/10 #@param zookeep-er-Con-nect #* !!Manda-tory:Zookeeper con-nec-
+tion string comma
+
+Overfull \hbox (154.08838pt too wide) in paragraph at lines 281--286
+\T1/ptm/m/n/10 sep-a-rated #* host:port pairs, each cor-re-spond-ing to a zk se
+rver. e.g. #* "127.0.0.1:3000,127.0.0.1:3001,127.0.0.1:3002"
+[5]
+Overfull \hbox (4.89815pt too wide) in paragraph at lines 309--312
+[]\T1/ptm/m/n/10 #* @param au-to-Com-mit-In-ter-valMs #* --Optional:default:60*
+1000 The fre-quency
+
+Overfull \hbox (63.78036pt too wide) in paragraph at lines 334--334
+ []\T1/pcr/m/n/9 consumer2=rkafka.startConsumer("127.0.0.1:2181","test-consumer
+-group","50000","1000")[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (108.78088pt too wide) in paragraph at lines 360--360
+ []\T1/pcr/m/n/10 rkafka.startProducer(metadataBrokerList,producerType="sync",c
+ompressionCodec="none",[] 
+
+Overfull \hbox (204.78088pt too wide) in paragraph at lines 361--361
+ []   \T1/pcr/m/n/10 serializerClass="kafka.serializer.StringEncoder",partition
+erClass="NULL",compressedTopics="NULL",[] 
+
+Overfull \hbox (31.62755pt too wide) in paragraph at lines 372--376
+\T1/ptm/m/n/10 boot-strap-ping knowl-edge # * about the rest of the clus-ter fo
+r-mat: host1:port1,host2:port2
+[6]
+Overfull \hbox (8.05768pt too wide) in paragraph at lines 393--397
+\T1/ptm/m/n/10 for par-ti-tion-ing # * events; de-fault par-ti-tion spreads dat
+a ran-domly # de-fault:NULL 
+
+Overfull \hbox (117.7803pt too wide) in paragraph at lines 443--443
+ []\T1/pcr/m/n/9 producer2=rkafka.startProducer("127.0.0.1:9092","sync","none",
+"kafka.serializer.StringEncoder")[] 
+[7] [8] (./Rd2.aux) )
+(see the transcript file for additional information){/usr/share/texlive/texmf-d
+ist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/urw/
+courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr
+8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (8 pages, 77774 bytes).
+Transcript written on Rd2.log.
+Saving output to 'rkafka-manual.pdf' ...
+Done
+You may want to clean up by 'rm -rf /tmp/RtmpEYJ8sV/Rd2pdf513a5e7504d'

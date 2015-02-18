@@ -1,0 +1,20 @@
+###RPhoenix - JDBC connection jar
+
+This java project creates the Fat and Thin JDBC jar for the RPhoenix package. The fat jar contains the Phoenix JDBC connection jar along with the dependencies. The thin jar contains the java wrapper of RPhoenix package.
+
+Here are links to more information on Apache Phoenix:
+
+
+- [Apache Phoenix Documentation](http://phoenix.apache.org/)
+
+- [Apache Phoenix JDBC Download](http://apache.claz.org/incubator/phoenix/)
+
+- [Apache Phoenix User Group](http://phoenix.apache.org/mailing_list.html)
+
+ 
+ 
+####Dependencies
+To build the project you must have Maven 2.x or higher installed.  Maven info is [here](http://maven.apache.org).
+
+To run the project you must have access to a Hadoop cluster running Apache Phoenix with the compatible HBase.
+

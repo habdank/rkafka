@@ -1,0 +1,16 @@
+{
+    "contents" : "is.installed <- function(mypkg){\n  is.element(mypkg, installed.packages()[,1])\n} \nlibrary(rkafka1.0)\n  \nproducer1=rkafka.startProducer(\"127.0.0.1:9092\")\ncondition=rJava::.jinstanceof(producer1,\"com/musigma/producer/MuProducer\")\nRUnit::checkTrue(condition,\"check1\")\n\n",
+    "created" : 1424101945550.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4152534635",
+    "id" : "771346EF",
+    "lastKnownWriteTime" : 1424101963,
+    "path" : "/home/shrutigupta34/rkafkafinal/rkafka1.0/src/tests/unitTests.R",
+    "project_path" : "src/tests/unitTests.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

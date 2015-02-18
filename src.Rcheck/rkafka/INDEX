@@ -1,0 +1,7 @@
+RKAFKA package          RKAFKA
+rkafka.closeConsumer    Closing KAKFA consumer
+rkafka.closeProducer    KAFKA producer shutdown
+rkafka.read             KAFKA Consumer Reading
+rkafka.send             KAFKA producer sending message
+rkafka.startConsumer    Creating high level KAFKA consumer
+rkafka.startProducer    Creating producer
