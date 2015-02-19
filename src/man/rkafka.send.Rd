@@ -34,29 +34,15 @@ rkafka.send(producer, topicName, ip, message)
 #   *            !!Mandatory: message to be sent
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
 \value{
 Doesn't return a value
-}
-\references{
-%% ~put references to the literature/web site here ~
 }
 \author{
 Shruti Gupta
 }
-\note{
-%%  ~~further notes~~
-}
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
-producer1=rkafka.startProducer("127.0.0.1:9092")
+producer1=rkafka.createProducer("127.0.0.1:9092")
 rkafka.send(producer1,"test","127.0.0.1:9092","Testing")
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

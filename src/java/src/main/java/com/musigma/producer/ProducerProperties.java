@@ -10,7 +10,7 @@ import java.util.Properties;
  *
  */
 public class ProducerProperties {
-	
+
 	/**
 	 * @param metadataBrokerList
 	 *            !!Mandatory list of brokers used for bootstrapping knowledge
@@ -57,7 +57,7 @@ public class ProducerProperties {
 	 * @return returns a Properties Object containing properties for the
 	 *         Producer, to be passed to MuProducer class
 	 */
-	
+
 	public Properties setProducerProperties(String metadataBrokerList,
 			String producerType, String compressionCodec,
 			String serializerClass, String partitionerClass,
@@ -71,7 +71,7 @@ public class ProducerProperties {
 		producerProps.put("compression.codec", compressionCodec);
 		producerProps.put("serializer.class", serializerClass);
 
-		if (!(partitionerClass.equals("NULL")))
+		if (!("NULL").equalsIgnoreCase(partitionerClass))
 			producerProps.put("partitioner.class", partitionerClass);
 
 		if (!(compressedTopics.equals("NULL")))

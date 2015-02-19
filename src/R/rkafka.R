@@ -3,8 +3,6 @@
 # Author: shrutigupta34
 ###############################################################################
 .onLoad <- function(libname, pkgname) {
-	#Loading required libraries
-  tryCatch({library("rJava")},error=function(e){stop("rJava is not installed. Please install before proceeding")})
 
 	#specifying package location
   .jaddClassPath("inst/java/rkafka-1.0-jar-with-dependencies.jar")
@@ -62,7 +60,7 @@
 #     * @return returns a Properties Object containing properties for the
 #   *         Producer, to be passed to MuProducer class
 #   */
-rkafka.startProducer = function(metadataBrokerList,producerType="sync",compressionCodec="none",
+rkafka.createProducer = function(metadataBrokerList,producerType="sync",compressionCodec="none",
 		serializerClass="kafka.serializer.StringEncoder",partitionerClass="NULL",compressedTopics="NULL",
 		queueBufferingMaxTime="NULL",
 		queueBufferingMaxMessages="NULL",
@@ -124,7 +122,7 @@ rkafka.closeProducer <-function(producer)
 	.jcall(producer,"V","close")
 }
 
-#function to create high level consumer
+#function to create consumer
 
 #/**
 #		* Definition of arguments
@@ -142,7 +140,9 @@ rkafka.closeProducer <-function(producer)
 #* @param consumerTimeoutMs
 #*            !!Mandatory:Throw a timeout exception to the consumer if no
 #*            message is available for consumption after the specified
-#*            interval default:1000
+#*            interval default:10000
+#*@param topicName: 
+#*            !!Mandatory: Name of the topic from where to read messages
 #* @param autoCommitEnable
 #*            --Optional:default:true If true, periodically commit to
 #*            ZooKeeper the offset of messages already fetched by the
@@ -152,48 +152,113 @@ rkafka.closeProducer <-function(producer)
 #*            --Optional:default:60*1000 The frequency in ms that the
 #*            consumer offsets are committed to zookeeper.
 #* @param autoOffsetReset
-#*            --Optional:default:largest * smallest : automatically reset
-#*            the offset to the smallest offset largest : automatically
-#*            reset the offset to the largest offset anything else: throw
-#*            exception to the consumer
+#*            --Optional:default:largest 
+#             * smallest : automatically reset the offset to the smallest offset 
+#             largest : automatically: reset the offset to the largest offset 
+#             anything else: throw exception to the consumer
 #*/
 
-rkafka.startConsumer<- function(zookeeperConnect,groupId="test-consumer-group",zookeeperConnectionTimeoutMs="100000",consumerTimeoutMs="5000",autoCommitEnable="true",autoCommitInterval="1000",autoOffsetReset="largest"){
+rkafka.createConsumer<- function(zookeeperConnect,groupId="test-consumer-group",zookeeperConnectionTimeoutMs="100000",consumerTimeoutMs="10000",topicName,autoCommitEnable="NULL",autoCommitInterval="NULL",autoOffsetReset="NULL"){
 	
 	zookeeperConnect=as.character(zookeeperConnect)
 	groupId=as.character(groupId)
 	zookeeperConnectionTimeoutMs=as.character(zookeeperConnectionTimeoutMs)
+	consumerTimeoutMs=as.character(consumerTimeoutMs)
+  topicName=as.character(topicName)
 	autoCommitEnable=as.character(autoCommitEnable)
 	autoCommitInterval=as.character(autoCommitInterval)
 	autoOffsetReset=as.character(autoOffsetReset)
-	consumerTimeoutMs=as.character(consumerTimeoutMs)
-	
-	HighConsumerObj<-.jnew("com/musigma/consumer/MuHighConsumer",zookeeperConnect,groupId,zookeeperConnectionTimeoutMs,consumerTimeoutMs,autoCommitEnable,autoCommitInterval,autoOffsetReset)
 
-  return(HighConsumerObj)
+  
+  Consumer<-.jnew("com/musigma/consumer/MuConsumer")
+  print(Consumer)
+  .jcall(Consumer,"V","CreateConsumer",zookeeperConnect,groupId,zookeeperConnectionTimeoutMs,consumerTimeoutMs,autoCommitEnable,autoCommitInterval,autoOffsetReset)
+ success= .jcall(Consumer,"Z","startConsumer",topicName)
+ 
+ if(success=="false"){
+   stop("Consumer didn't start propertly")
+   
+ }
+
+  return(Consumer)
 }
 
 #/**
-#		* Reads messages from the topic passed as parameter.Waits for a time
-#* specified by consumer timeout property and then returns the messages
-#		  @param HighConsumerObj:Consumer through which messages are to be read(Java Object)	
-#		  @param topicName
-#*            :The topic from which message is to be read
-#*		  @return String[]: array of messages read
+#		* Reads messages from the topic passed as parameter while creating the consumer object one at a time.Waits for a time
+#* specified by consumer timeout property to check for new messages, else returns ""
+#		  @param ConsumerObj: Consumer through which messages are to be read(Java Object)	
+#*		  @return String: next available message
 #*/
-rkafka.read<-function(HighConsumerObj,topicName)
+
+rkafka.readTail<-function(ConsumerObj)
 {
+	message=.jcall(ConsumerObj,"Ljava/lang/String;","tail")
+	print("INFO: Remember to close the consumer after done reading messages")
+  return(message)
 	
-	messages=.jcall(HighConsumerObj,"[Ljava/lang/String;","read", topicName)
-	print("INFO: Remember to close the consumer after reading messages. It won't work correctly next time otherwise")
+}
+#/**
+#  	* Reads messages from the topic passed as parameter while creating the consumer object in batch.Waits for a time
+#* specified by consumer timeout property and returns all the messages it read.
+#		  @param ConsumerObj: Consumer through which messages are to be read(Java Object)	
+#*		  @return String[]: Array of Strings
+#*/
+rkafka.readPoll<-function(ConsumerObj){
+  messages=.jcall(ConsumerObj,"[Ljava/lang/String;","poll")
+  print("INFO: Remember to close the consumer after done reading messages")
   return(messages)
-	
 }
 
 #function to shut down the consumer
-rkafka.closeConsumer<-function(HighConsumerObj){
-	.jcall(HighConsumerObj,"V","close")
+rkafka.closeConsumer<-function(ConsumerObj){
+	.jcall(ConsumerObj,"V","close")
+}
+#function to start Simple Consumer
+# /**
+#   * Creates a KAFKA simple consumer
+# * @param kafkaServerURL : URL of the KAFKA server
+# * @param kafkaServerPort :Port number of the KAFKA server
+# * @param connectionTimeOut : Connection Timeout in ms
+# * @param kafkaProducerBufferSize: Buffer size
+# * @param clientId : ID Of the client
+# */
+rkafka.createSimpleConsumer<-function(kafkaServerURL, kafkaServerPort,connectionTimeOut, kafkaProducerBufferSize, clientId){
+  MuSimpleConsumer<-.jnew("com/musigma/consumer/MuSimpleConsumer")
+  
+  kafkaServerURL<-as.character(kafkaServerURL)
+  kafkaServerPort<-as.character(kafkaServerPort)
+  connectionTimeOut<-as.character(connectionTimeOut)
+  kafkaProducerBufferSize<-as.character(kafkaProducerBufferSize)
+  clientId<-as.character(clientId)
+  .jcall(MuSimpleConsumer,"V","CreateSimpleConsumer",kafkaServerURL,kafkaServerPort,connectionTimeOut,kafkaProducerBufferSize,clientId)
+  
+  return(MuSimpleConsumer)
 }
 
+# /**Function for consumer to read messages from topic
+# * @param topicName: Name of the topic from where to read messages
+# * @param partition: Partition Number
+# * @param Offset :Offset Number
+# * @param msgReadSize : Size of the message to be read**/
+rkafka.receiveFromSimpleConsumer=function(SimpleConsumerObj,topicName,partition,Offset,msgReadSize){
+  
+  topicName<-as.character(topicName)
+  partition<-as.character(partition)
+  Offset<-as.character(Offset)
+  msgReadSize<-as.character(msgReadSize)
+  .jcall(SimpleConsumerObj,"V","receive",topicName,partition,Offset,msgReadSize)
+
+}
+#Function to return messages read by Simple Consumer one at a time
+rkafka.readFromSimpleConsumer=function(SimpleConsumerObj){
+  msg=.jcall(SimpleConsumerObj,"Ljava/lang/String;","read")
+  return(msg)
+}
+# /**
+#   * Close the simple consumer
+# */
+rkafka.closeSimpleConsumer=function(SimpleConsumer){
+  .jcall(SimpleConsumer,"V","close")
+}
 
 

@@ -5,7 +5,7 @@
 RKAFKA
 }
 \description{
-It provides functionalities of creating a KAFKA producer and consumer, and sending and receiving messages.
+It provides functionalities of creating a KAFKA producer, simple consumer,high level consumer and sending and receiving messages.
 }
 \details{
 \tabular{ll}{
@@ -24,21 +24,31 @@ Maintainer: Who to complain to shruti.gupta@mu-sigma.com
 
 }
 \references{
-~~ Literature or other references for background information ~~
+To understand KAFKA
+\link{kafka.apache.org/documentation.html}
+
 }
 
 \keyword{ package }
-\seealso{
-~~ Optional links to other man pages, e.g. ~~
-~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
-}
+
 \examples{
-producer1=rkafka.startProducer("127.0.0.1:9092")
-rkafka.send(producer1,"ind1","127.0.0.1:9092","this2")
-rkafka.send(producer1,"ind1","127.0.0.1:9092","is21")
-rkafka.closeProducer(producer1)
-consumer1=rkafka.startConsumer("127.0.0.1:2181")
-msgs=rkafka.read(consumer1,"ind1")
-print(msgs)
-rkafka.closeConsumer(consumer1)
+prod1=rkafka.createProducer("127.0.0.1:9092")
+
+rkafka.send(prod1,"test","127.0.0.1:9092","Testing once")
+rkafka.send(prod1,"test","127.0.0.1:9092","Testing twice")
+rkafka.send(prod1,"test","127.0.0.1:9092","Testing thrice")
+
+rkafka.closeProducer(prod1)
+
+cons1=rkafka.createSimpleConsumer("127.0.0.1","9092","100000","100000","test-client")
+
+rkafka.receiveFromSimpleConsumer(cons1,"test","0","0","100000")
+
+msg1=rkafka.readFromSimpleConsumer(cons1)
+msg2=rkafka.readFromSimpleConsumer(cons1)
+msg3=rkafka.readFromSimpleConsumer(cons1)
+
+print(msg1)
+print(msg2)
+print(msg3)
 }
